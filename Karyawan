@@ -1,0 +1,69 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace UTSIKIQ
+{
+    class Karyawan
+    {
+        public string nama { get; set; }
+        public string nik { get; set; }
+
+        public string jabatan { get; set; }
+        public double gaji { get; set; }
+
+        public double gajinaik = 0.1;
+        double totalnaik;
+
+
+
+        public void infoGaji()
+
+        {
+            if (jabatan == "MANAGER" || jabatan == "manager" || jabatan == "Manager")
+            {
+                gaji = 9000000.00;
+
+            }
+
+            if (jabatan == "SEKRETARIS" || jabatan == "sekretaris")
+            {
+                gaji = 600000.00;
+
+            }
+            else
+            {
+                Console.WriteLine("Jabatan yang anda masukkan tidak terdaftar,Masukkan jabatan yang sesuai seperti contoh dibawah");
+                Console.WriteLine("HRD,MANAGER,manager");
+
+            }
+
+            Console.WriteLine("\tnik	\tnama	\tgaji	\tjabatan");
+            Console.WriteLine("\t{0}	\t{1}	\t{2}	\t{3}", nik, nama, gaji, jabatan);
+
+
+        }
+
+
+
+        public void kenaikanGaji()
+        {
+            if (gaji == 95000000.00)
+            {
+
+                totalnaik = gaji * gajinaik;
+                gaji = gaji + totalnaik;
+                Console.WriteLine("Yess Gaji naik 10%");
+
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("\tnik	\tnama	\tgaji	\tnaik gaji	\tjabatan");
+            Console.WriteLine("\t{0}	\t{1}	\t{2}	\t{3}		\t{4}", nik, nama, gaji, totalnaik, jabatan);
+
+        }
+    }
+
+}
